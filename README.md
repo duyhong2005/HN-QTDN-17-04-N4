@@ -23,11 +23,11 @@ Hệ thống được xây dựng với mục tiêu cung cấp một giải phá
 
 ## 2. Các chức năng chính
 - Quản lý nhân sự:Thực hiện đầy đủ các thao tác CRUD (Thêm, Sửa, Xóa, Tìm kiếm) dữ liệu nhân sự.
-<img width="1803" height="897" alt="image" src="https://github.com/user-attachments/assets/b94e731d-ebbd-42b7-9a0d-1187aa68c769" />
+<img width="1341" height="892" alt="image" src="https://github.com/user-attachments/assets/2534b518-ea06-42cc-b52a-fb646c845ba3" />
 - Quản lý khách hàng: Thực hiện đầy đủ các thao tác CRUD (Thêm, Sửa, Xóa, Tìm kiếm) dữ liệu khách hàng.
-<img width="1782" height="740" alt="image" src="https://github.com/user-attachments/assets/924c1fd5-7dec-4505-9834-2a91f9ead25f" />
+<img width="1802" height="606" alt="image" src="https://github.com/user-attachments/assets/624007b2-1b2c-4bb5-be26-0772a846d428" />
 - Quản lý văn bản: Hệ thống lưu trữ, cập nhật trạng thái, theo dõi luồng xử lý và tìm kiếm văn bản.
-<img width="1796" height="672" alt="image" src="https://github.com/user-attachments/assets/b19be3d3-079d-4090-a138-bb089d6756af" />
+<img width="1251" height="792" alt="image" src="https://github.com/user-attachments/assets/a419fe1d-c137-4f17-aa62-1c8154f1053c" />
 - Trợ lý AI: Tích hợp trí tuệ nhân tạo cho phép người dùng tra cứu thông tin bằng ngôn ngữ tự nhiên, hỗ trợ tự động hóa quy trình và nâng cao hiệu suất làm việc.<br>
   
 <img width="454" height="174" alt="image" src="https://github.com/user-attachments/assets/7456f3ff-287c-4bce-942b-d526752a1576" />
