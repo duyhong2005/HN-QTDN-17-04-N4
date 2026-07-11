@@ -113,7 +113,8 @@ Người sử dụng truy cập theo đường dẫn _http://localhost:8069/_ đ
 
 © 2024 AIoTLab, Faculty of Information Technology, DaiNam University. All rights reserved.
 ## 📝 8. Poster
-<img width="506" height="735" alt="image" src="https://github.com/user-attachments/assets/d516104c-0ee3-4d92-bb2c-87bcde0729aa" />
+<img width="900" height="1300" alt="image" src="https://github.com/user-attachments/assets/463b15da-5918-45e9-a95d-0186ffdc6626" />
+
 
 
 ---
