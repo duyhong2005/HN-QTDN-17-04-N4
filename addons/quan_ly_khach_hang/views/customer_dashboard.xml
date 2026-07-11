@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_customer_graph_type" model="ir.ui.view">
+            <field name="name">customer.graph.type</field>
+            <field name="model">customer</field>
+            <field name="arch" type="xml">
+                <graph string="Thống kê theo Loại khách hàng" type="pie">
+                    <field name="customer_type" type="row"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_customer_graph_income" model="ir.ui.view">
+            <field name="name">customer.graph.income</field>
+            <field name="model">customer</field>
+            <field name="arch" type="xml">
+                <graph string="Thống kê theo Mức thu nhập" type="bar">
+                    <field name="income_level" type="row"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_customer_graph_status" model="ir.ui.view">
+            <field name="name">customer.graph.status</field>
+            <field name="model">customer</field>
+            <field name="arch" type="xml">
+                <graph string="Thống kê theo Trạng thái" type="pie">
+                    <field name="customer_status" type="row"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_customer_graph_gender" model="ir.ui.view">
+            <field name="name">customer.graph.gender</field>
+            <field name="model">customer</field>
+            <field name="arch" type="xml">
+                <graph string="Thống kê theo Giới tính" type="pie">
+                    <field name="gender" type="row"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_customer_graph_age" model="ir.ui.view">
+            <field name="name">customer.graph.age</field>
+            <field name="model">customer</field>
+            <field name="arch" type="xml">
+                <graph string="Thống kê theo Nhóm độ tuổi" type="bar">
+                    <field name="age_group" type="row"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="view_customer_graph_sale_order" model="ir.ui.view">
+            <field name="name">customer.graph.sale_order</field>
+            <field name="model">customer</field>
+            <field name="arch" type="xml">
+                <graph string="Thống kê theo Nhóm số đơn hàng" type="bar">
+                    <field name="sale_order_group" type="row"/>
+                </graph>
+            </field>
+        </record>
+
+        <record id="action_graph_cust_type" model="ir.actions.act_window">
+            <field name="name">Loại khách hàng</field>
+            <field name="res_model">customer</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_customer_graph_type"/>
+        </record>
+
+        <record id="action_graph_cust_income" model="ir.actions.act_window">
+            <field name="name">Mức thu nhập</field>
+            <field name="res_model">customer</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_customer_graph_income"/>
+        </record>
+
+        <record id="action_graph_cust_status" model="ir.actions.act_window">
+            <field name="name">Trạng thái khách hàng</field>
+            <field name="res_model">customer</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_customer_graph_status"/>
+        </record>
+
+        <record id="action_graph_cust_gender" model="ir.actions.act_window">
+            <field name="name">Giới tính</field>
+            <field name="res_model">customer</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_customer_graph_gender"/>
+        </record>
+
+        <record id="action_graph_cust_age" model="ir.actions.act_window">
+            <field name="name">Nhóm độ tuổi</field>
+            <field name="res_model">customer</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_customer_graph_age"/>
+        </record>
+
+        <record id="action_graph_cust_order" model="ir.actions.act_window">
+            <field name="name">Nhóm số đơn hàng</field>
+            <field name="res_model">customer</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_customer_graph_sale_order"/>
+        </record>
+
+        <record id="view_customer_board" model="ir.ui.view">
+            <field name="name">customer.board.form</field>
+            <field name="model">board.board</field>
+            <field name="arch" type="xml">
+                <form string="Báo cáo phân tích khách hàng">
+                    <board style="1-1">
+                        <column>
+                            <action name="%(action_graph_cust_type)d" string="Phân tích Loại khách hàng"/>
+                            <action name="%(action_graph_cust_status)d" string="Phân tích Trạng thái khách hàng"/>
+                            <action name="%(action_graph_cust_age)d" string="Phân tích theo Nhóm độ tuổi"/>
+                        </column>
+                        <column>
+                            <action name="%(action_graph_cust_income)d" string="Phân tích Mức thu nhập"/>
+                            <action name="%(action_graph_cust_gender)d" string="Phân tích theo Giới tính"/>
+                            <action name="%(action_graph_cust_order)d" string="Phân tích theo Nhóm số đơn hàng"/>
+                        </column>
+                    </board>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_customer_dashboard" model="ir.actions.act_window">
+            <field name="name">Báo cáo khách hàng tổng hợp</field>
+            <field name="res_model">board.board</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_customer_board"/>
+        </record>
+
+        <menuitem id="menu_customer_dashboard"
+                  name="Báo cáo Tổng hợp"
+                  parent="menu_root"
+                  action="action_customer_dashboard"
+                  sequence="20"/>
+    </data>
+</odoo>

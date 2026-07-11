@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- ================= 1. CẤU HÌNH CÁC ACTION WINDOWS DẠNG DANH SÁCH (HỢP LỆ) ================= -->
+        
+        <!-- Action: 5 Phiếu chấm công & Lương mới nhất -->
+        <record id="action_cham_cong_dashboard_list" model="ir.actions.act_window">
+            <field name="name">📊 Phiếu chấm công &amp; Lương gần đây</field>
+            <field name="res_model">cham_cong</field>
+            <field name="view_mode">tree</field>
+            <field name="limit">5</field>
+        </record>
+
+        <!-- Action: 5 Chứng chỉ chuyên môn của nhân viên -->
+        <record id="action_chung_chi_dashboard_list" model="ir.actions.act_window">
+            <field name="name">🏅 Chứng chỉ chuyên môn nhân sự</field>
+            <field name="res_model">chung_chi</field>
+            <field name="view_mode">tree</field>
+            <field name="limit">5</field>
+        </record>
+
+        <!-- Action: 5 Biến động/Lịch sử công tác mới nhất -->
+        <record id="action_lich_su_cong_tac_dashboard_list" model="ir.actions.act_window">
+            <field name="name">🔄 Điều động &amp; Lịch sử công tác mới nhất</field>
+            <field name="res_model">lich_su_cong_tac</field>
+            <field name="view_mode">tree</field>
+            <field name="limit">5</field>
+        </record>
+
+        <!-- Action: Tóm tắt thông tin nhanh danh sách nhân viên -->
+        <record id="action_nhan_vien_dashboard_list" model="ir.actions.act_window">
+            <field name="name">👥 Danh sách thông tin nhân viên</field>
+            <field name="res_model">nhan_vien</field>
+            <field name="view_mode">tree</field>
+            <field name="limit">5</field>
+        </record>
+
+
+        <!-- ================= 2. CÁC ACTION WINDOWS CHO BIỂU ĐỒ GRAPH ================= -->
+        <record id="action_graph_phong_ban" model="ir.actions.act_window">
+            <field name="name">Thống kê theo Phòng Ban</field>
+            <field name="res_model">nhan_vien</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_nhan_vien_graph_phong_ban"/>
+        </record>
+
+        <record id="action_graph_chuc_vu" model="ir.actions.act_window">
+            <field name="name">Thống kê theo Chức Vụ</field>
+            <field name="res_model">nhan_vien</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_nhan_vien_graph_chuc_vu"/>
+        </record>
+
+        <record id="action_graph_ho_ten" model="ir.actions.act_window">
+            <field name="name">Chi tiết theo Nhân Viên</field>
+            <field name="res_model">nhan_vien</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="view_nhan_vien_graph_ho_ten"/>
+        </record>
+
+
+        <!-- ================= 3. THIẾT KẾ GIAO DIỆN DASHBOARD TỔNG HỢP (Bố cục 1-1-1) ================= -->
+        <record id="view_nhan_vien_board" model="ir.ui.view">
+            <field name="name">nhan_vien.board.form</field>
+            <field name="model">board.board</field>
+            <field name="arch" type="xml">
+                <form string="Bảng theo dõi nhân sự tổng hợp">
+                    <board style="1-1-1">
+                        <!-- CỘT 1: BIẾN ĐỘNG NHÂN SỰ & THÔNG TIN CHUNG -->
+                        <column>
+                            <action name="%(action_nhan_vien_dashboard_list)d" string="Danh sách nhân sự"/>
+                            <action name="%(action_lich_su_cong_tac_dashboard_list)d" string="Lịch sử công tác điều động"/>
+                        </column>
+                        
+                        <!-- CỘT 2: CHI TRẢ LƯƠNG & CHỨNG CHỈ -->
+                        <column>
+                            <action name="%(action_cham_cong_dashboard_list)d" string="Theo dõi chấm công &amp; lương"/>
+                            <action name="%(action_chung_chi_dashboard_list)d" string="Danh sách bằng cấp chứng chỉ"/>
+                        </column>
+                        
+                        <!-- CỘT 3: CÁC BIỂU ĐỒ PHÂN TÍCH LƯƠNG TỔNG QUAN -->
+                        <column>
+                            <action name="%(action_graph_phong_ban)d" string="Cơ cấu lương theo Phòng ban"/>
+                            <action name="%(action_graph_chuc_vu)d" string="Tỷ trọng lương theo Chức vụ"/>
+                            <action name="%(action_graph_ho_ten)d" string="So sánh tổng quan giữa các nhân viên"/>
+                        </column>
+                    </board>
+                </form>
+            </field>
+        </record>
+
+        <!-- Action Window chính để mở Dashboard từ Menu -->
+        <record id="action_nhan_vien_board" model="ir.actions.act_window">
+            <field name="name">Báo cáo nhân sự tổng hợp</field>
+            <field name="res_model">board.board</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_nhan_vien_board"/>
+        </record>
+
+    </data>
+</odoo>

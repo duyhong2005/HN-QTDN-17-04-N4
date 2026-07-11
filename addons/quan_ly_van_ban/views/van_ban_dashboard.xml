@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="action_kpi_van_ban_den" model="ir.actions.act_window">
+            <field name="name">Tổng văn bản đến</field>
+            <field name="res_model">van_ban_den</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_kpi_van_ban_di" model="ir.actions.act_window">
+            <field name="name">Tổng văn bản đi</field>
+            <field name="res_model">qlvn.van_ban_di</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <record id="action_kpi_can_xu_ly" model="ir.actions.act_window">
+            <field name="name">Văn bản chờ xử lý</field>
+            <field name="res_model">van_ban_den</field>
+            <field name="view_mode">tree</field>
+        </record>
+
+        <record id="action_graph_van_ban_den" model="ir.actions.act_window">
+            <field name="name">Thống kê VB đến</field>
+            <field name="res_model">van_ban_den</field>
+            <field name="view_mode">graph</field>
+        </record>
+
+        <record id="action_graph_van_ban_di" model="ir.actions.act_window">
+            <field name="name">Thống kê VB đi</field>
+            <field name="res_model">qlvn.van_ban_di</field>
+            <field name="view_mode">graph</field>
+        </record>
+
+        <record id="action_list_van_ban_moi" model="ir.actions.act_window">
+            <field name="name">Văn bản mới nhất</field>
+            <field name="res_model">van_ban_den</field>
+            <field name="view_mode">tree</field>
+            <field name="limit">5</field>
+        </record>
+
+        <record id="view_van_ban_board" model="ir.ui.view">
+            <field name="name">van_ban.board.form</field>
+            <field name="model">board.board</field>
+            <field name="arch" type="xml">
+                <form string="Bảng điều khiển Văn bản">
+                    <board style="1-1-1">
+                        <column>
+                            <action name="%(action_kpi_van_ban_den)d" string="Tổng VB đến"/>
+                            <action name="%(action_kpi_van_ban_di)d" string="Tổng VB đi"/>
+                            <action name="%(action_kpi_can_xu_ly)d" string="VB chờ xử lý"/>
+                        </column>
+                        
+                        <column>
+                            <action name="%(action_graph_van_ban_den)d" string="Phân tích VB đến"/>
+                            <action name="%(action_graph_van_ban_di)d" string="Phân tích VB đi"/>
+                        </column>
+
+                        <column>
+                            <action name="%(action_list_van_ban_moi)d" string="Văn bản mới nhất"/>
+                        </column>
+                    </board>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_van_ban_board" model="ir.actions.act_window">
+            <field name="name">Báo cáo Tổng hợp</field>
+            <field name="res_model">board.board</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_van_ban_board"/>
+        </record>
+    </data>
+</odoo>
