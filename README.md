@@ -28,8 +28,10 @@ Hệ thống được xây dựng với mục tiêu cung cấp một giải phá
 <img width="1782" height="740" alt="image" src="https://github.com/user-attachments/assets/924c1fd5-7dec-4505-9834-2a91f9ead25f" />
 - Quản lý văn bản: Hệ thống lưu trữ, cập nhật trạng thái, theo dõi luồng xử lý và tìm kiếm văn bản.
 <img width="1796" height="672" alt="image" src="https://github.com/user-attachments/assets/b19be3d3-079d-4090-a138-bb089d6756af" />
-- Trợ lý AI: Tích hợp trí tuệ nhân tạo cho phép người dùng tra cứu thông tin bằng ngôn ngữ tự nhiên, hỗ trợ tự động hóa quy trình và nâng cao hiệu suất làm việc.
+- Trợ lý AI: Tích hợp trí tuệ nhân tạo cho phép người dùng tra cứu thông tin bằng ngôn ngữ tự nhiên, hỗ trợ tự động hóa quy trình và nâng cao hiệu suất làm việc.<br>
+  
 <img width="454" height="174" alt="image" src="https://github.com/user-attachments/assets/7456f3ff-287c-4bce-942b-d526752a1576" />
+
 <img width="173" height="222" alt="image" src="https://github.com/user-attachments/assets/075fd895-4a8f-4e84-af72-194ff07622f4" />
 
 ## 📖 3. Giới thiệu
